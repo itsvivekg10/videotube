@@ -1,0 +1,19 @@
+.output {
+  width: 100%;
+  height: 95vh;
+  background: #fff;
+}
+.outputbutton {
+  background: #64e73c; /* Modern red color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+
+  transition: background 0.3s ease; /* Smooth transition for hover effect */
+  cursor: not-allowed; /* Change cursor to indicate it's disabled */
+  opacity: 0.6; /* 
+}
+
+

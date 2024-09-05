@@ -1,0 +1,102 @@
+/* Main container for recommended videos */
+.recomended {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  gap: 15px; /* Space between each video item */
+}
+
+/* Container for the list of video items */
+.side-video-list {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  gap: 10px; /* Adds space between each video item */
+}
+
+/* Container for each video item */
+.video-item {
+  display: flex;
+  align-items: flex-start; /* Aligns items to the top */
+  gap: 10px; /* Adds space between image and text */
+  margin-bottom: 2px; /* Space below each video item */
+  width: 100%; /* Full width to maintain layout consistency */
+  padding: 5px; /* Padding around the content */
+  border-radius: 4px; /* Rounded corners for video items */
+}
+
+/* Thumbnail image for each recommended video */
+.video-item img {
+  width: 180px; /* Fixed width for thumbnails */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 4px; /* Rounded corners */
+  object-fit: cover; /* Ensures image fits within the container */
+}
+
+/* Video information container */
+.video-info {
+  flex: 1; /* Allows text to take the remaining space */
+  display: flex;
+  flex-direction: column; /* Stack text elements vertically */
+  justify-content: flex-start; /* Aligns text to the top */
+  padding-left: 10px; /* Padding to separate text from image */
+}
+
+/* Video title */
+.video-info h4 {
+  font-size: 14px;
+  margin: 0 0 5px; /* Space below the title */
+  color: #333; /* Darker color for readability */
+  font-weight: bold; /* Bold title text */
+  line-height: 1.2; /* Adjust line height for better readability */
+}
+
+/* Channel name and views */
+.video-info p {
+  font-size: 12px;
+  margin: 0; /* Remove default margins */
+  color: #606060; /* Slightly grey color */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .recomended {
+    gap: 10px; /* Reduced gap for smaller screens */
+  }
+
+  .video-item {
+    flex-direction: row; /* Align items in a row on smaller screens */
+    align-items: center; /* Center align items */
+  }
+
+  .video-item img {
+    width: 100px; /* Smaller image size on smaller screens */
+  }
+
+  .video-info {
+    padding-left: 10px; /* Consistent padding */
+  }
+}
+
+@media (max-width: 480px) {
+  .side-video-list {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center-align on very small screens */
+  }
+
+  .video-item {
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center; /* Center align content */
+    text-align: center; /* Center text alignment */
+    width: 100%; /* Full width */
+  }
+
+  .video-item img {
+    width: 80%; /* Reduce image width for better alignment */
+    margin-bottom: 10px; /* Space below image */
+  }
+
+  .video-info {
+    align-items: center; /* Center-align text on small screens */
+    text-align: center; /* Center text alignment */
+    padding-left: 0; /* Remove left padding for center alignment */
+  }
+}

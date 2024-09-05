@@ -1,0 +1,141 @@
+/* General sidebar styling */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  transition: width 0.3s ease;
+  overflow-y: auto;
+}
+
+.shortcut-links {
+  width: 100%;
+}
+
+.side-link {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  margin: 5px 0;
+  width: 90%;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+}
+
+.side-link:hover {
+  background-color: #ddd;
+  transform: translateX(5px);
+}
+
+.side-link img {
+  width: 30px;
+  height: 30px;
+  margin-right: 15px;
+}
+
+.side-link p {
+  font-size: 16px;
+  color: #333;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Active link styling */
+.side-link.active img {
+  border-bottom: 3px solid red;
+  padding-bottom: 2px;
+}
+.side-link.active p {
+  color: red;
+  font-weight: bold;
+}
+
+/* Subscribed section specific styles */
+.subscribed-list {
+  margin-top: 20px;
+}
+
+.subscribed-list h3 {
+  padding-left: 15px;
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.subscribed-list .side-linkd img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: cover;
+}
+.side-linkd {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Space between items */
+}
+.side-linkd img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: cover;
+}
+
+/* Responsive Design */
+
+/* Tablets and smaller screens */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+
+  .side-link img,
+  .subscribed-list .side-linkd img {
+    width: 25px;
+    height: 25px;
+  }
+
+  .side-link p {
+    font-size: 14px;
+  }
+
+  .subscribed-list h3 {
+    font-size: 16px; /* Adjust heading size for tablets */
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+  .sidebar {
+    width: 80px;
+    align-items: flex-start;
+  }
+
+  .side-link {
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 0;
+  }
+
+  .side-link img {
+    margin: 0 0 5px;
+  }
+
+  .side-link p {
+    font-size: 12px;
+    display: none; /* Hide text on small screens */
+  }
+
+  .subscribed-list h3 {
+    display: none; /* Hide the heading on small screens */
+  }
+
+  .subscribed-list .side-linkd p {
+    display: none; /* Hide subscriber names on small screens */
+  }
+}

@@ -1,0 +1,73 @@
+/* Main container that holds the sidebar and the feed */
+.main_container {
+  display: flex; /* Flexbox for horizontal layout */
+  flex-direction: row; /* Sidebar on the left, feed on the right */
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  background-color: #f9f9f9; /* Background color similar to YouTube */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: 240px; /* Fixed width for sidebar on larger screens */
+  flex-shrink: 0; /* Prevent the sidebar from shrinking */
+  height: 100vh; /* Full viewport height */
+  overflow-y: auto; /* Scrollable content if the sidebar overflows */
+
+  position: sticky; /* Stick sidebar to the top of the viewport */
+  top: 0; /* Stick to the top */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+  z-index: 2; /* Keep the sidebar above other elements */
+}
+
+/* Feed container styles */
+.feed_container {
+  flex-grow: 1; /* Feed takes the remaining width */
+  padding: 20px; /* Padding around feed content */
+  overflow-y: auto; /* Scrollable content if feed overflows */
+  height: 100vh; /* Full viewport height */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Card styles in the feed */
+.feed_container .card {
+  background-color: #ffffff; /* White background for cards */
+  margin-bottom: 20px; /* Space between cards */
+  padding: 15px; /* Padding inside each card */
+  border-radius: 8px; /* Rounded corners for cards */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition for hover effects */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.feed_container .card:hover {
+  transform: translateY(-2px); /* Slight lift on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* Card content styles */
+.feed_container .card img {
+  width: 100%; /* Full width for thumbnail images */
+  border-radius: 8px; /* Rounded corners for thumbnails */
+  margin-bottom: 10px; /* Space between image and text */
+}
+
+.feed_container .card h2 {
+  font-size: 18px; /* Font size for video title */
+  font-weight: bold; /* Bold text for title */
+  color: #333; /* Dark text color */
+  margin: 10px 0; /* Margin around title */
+  line-height: 1.4; /* Line height for readability */
+}
+
+.feed_container .card h3 {
+  font-size: 14px; /* Font size for channel name */
+  color: #606060; /* Gray text color */
+  margin-bottom: 5px; /* Space below channel name */
+}
+
+.feed_container .card p {
+  font-size: 12px;
+  color: #909090;
+}
