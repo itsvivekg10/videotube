@@ -4,100 +4,165 @@ nav {
   align-items: center;
   padding: 10px 2%;
   justify-content: space-between;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   background: #fff;
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
+}
+
+/* Left Section - Logo and Menu */
+.nav-left {
+  display: flex;
+  align-items: center;
 }
 
 .nav-left .menu-icon {
-  width: 22px;
-  margin-right: 25px;
+  width: 24px;
+  margin-right: 20px;
+  cursor: pointer;
 }
 
 .nav-left .logo {
-  width: 130px;
+  width: 120px;
+  cursor: pointer;
 }
 
-.nav-middile .search-box {
+/* Middle Section - Search Box */
+.nav-middle {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-middle .search-box {
   display: flex;
   align-items: center;
   border: 1px solid #ccc;
-  margin-right: 15px;
-  padding: 8px 12px;
+  padding: 8px;
   border-radius: 25px;
+  width: 100%;
+  max-width: 600px;
+  background-color: #f9f9f9;
 }
 
-.nav-middile .search-box input {
-  width: 400px;
-  border: 0;
-  outline: 0;
+.nav-middle .search-box input {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 0 10px;
   background: transparent;
 }
 
-.nav-middile .search-box img {
-  width: 15px;
+.nav-middle .search-box img {
+  width: 20px;
+  cursor: pointer;
+}
+
+/* Right Section - Icons */
+.nav-right {
+  display: flex;
+  align-items: center;
 }
 
 .nav-right img {
-  width: 25px;
-  margin-right: 25px;
+  width: 28px;
+  margin-right: 20px;
+  cursor: pointer;
 }
 
 .nav-right .user-icon {
-  width: 35px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Search Results Banner */
+.search-results-banner {
+  position: absolute;
+  top: 50px; /* Adjust this based on the height of your input box */
+  left: 0;
+  width: 40%;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 99;
+  margin-left: 29%;
+  border-top-left-radius: 4%;
+  border-top-right-radius: 4%;
+}
+
+.search-result-item {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-result-item:hover {
+  background-color: #f0f0f0;
 }
 
 /* Responsive Design */
 
 /* Tablet screens */
 @media (max-width: 1024px) {
-  .nav-middile .search-box input {
-    width: 300px; /* Adjust search box width for tablets */
+  .nav-middle .search-box input {
+    width: 300px;
   }
 
   .nav-right img {
-    width: 20px; /* Smaller icons */
+    width: 24px;
     margin-right: 15px;
   }
 
   .nav-right .user-icon {
-    width: 30px; /* Smaller user icon */
+    width: 30px;
   }
 
   .nav-left .logo {
-    width: 110px; /* Reduce logo size for tablets */
+    width: 100px;
   }
 }
 
 /* Mobile devices */
 @media (max-width: 768px) {
-  .nav {
-    padding: 10px 4%; /* Adjust padding for mobile */
-    justify-content: space-between; /* Align items to take full width */
+  nav {
+    flex-direction: column; /* Stack the navigation items */
+    padding: 10px 5%;
+  }
+
+  .nav-left {
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px; /* Space below the left section */
   }
 
   .nav-left .menu-icon {
-    width: 20px; /* Slightly smaller menu icon */
-    margin-right: 10px; /* Smaller margin */
+    width: 20px;
+    margin-right: 10px;
   }
 
   .nav-left .logo {
-    width: 100px; /* Smaller logo size for mobile */
+    width: 90px;
   }
 
-  .nav-middile .search-box {
-    width: 60%; /* Decrease the width of the search box */
-    padding: 5px 8px; /* Adjust padding for smaller screens */
-  }
-
-  .nav-middile .search-box input {
-    width: 100%; /* Full width input on mobile */
+  .nav-middle .search-box {
+    width: 92%;
+    padding: 5px 10px;
   }
 
   .nav-right {
-    display: none; /* Hide nav-right section on small screens */
+    display: none; /* Hide right icons on mobile */
+  }
+
+  .search-results-banner {
+    width: 100%; /* Full width on mobile */
+    margin-left: -2%;
+    margin-top: 7%;
   }
 }
