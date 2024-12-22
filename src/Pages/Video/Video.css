@@ -1,0 +1,51 @@
+/* Container for the entire video page */
+.play_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; /* Ensure space is distributed between left and right sides */
+  padding: 20px; /* Added padding for better spacing */
+  gap: 20px; /* Added gap between left and right sections */
+  width: 100%; /* Ensure the container takes full width */
+}
+
+/* Styling for the left side containing the video player */
+.left_side {
+  flex: 2; /* Takes up more space compared to the right side */
+  width: 70%; /* Left side takes 70% of the container width */
+}
+
+/* Styling for the right side containing recommended videos */
+.rigth_side {
+  flex: 1; /* Takes up less space compared to the left side */
+  width: 30%; /* Right side takes 30% of the container width */
+  max-width: 100%; /* Prevents exceeding the container width */
+  overflow-y: auto; /* Allows scrolling if content overflows */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .play_container {
+    flex-direction: column; /* Stack the sections vertically on smaller screens */
+    gap: 20px; /* Adjust gap for better spacing in vertical layout */
+  }
+
+  .left_side,
+  .rigth_side {
+    width: 100%; /* Full width for both sides on small screens */
+    max-width: none; /* Remove maximum width restriction */
+  }
+
+  .left_side {
+    margin-bottom: 20px; /* Add space below the video on smaller screens */
+  }
+
+  .rigth_side {
+    overflow: visible; /* Ensure no scroll bars on very small screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .rigth_side {
+    display: none;
+  }
+}

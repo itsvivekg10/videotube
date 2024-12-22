@@ -1,0 +1,97 @@
+/* General Styles */
+.feed {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(250px, 1fr)
+  ); /* Responsive grid */
+  gap: 16px; /* Space between items */
+  padding: 16px; /* Padding around the grid */
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #f9f9f9; /* Optional: Light background for the entire feed */
+}
+
+.video_sec {
+  text-decoration: none; /* Remove underline from links */
+  color: inherit; /* Inherit text color */
+}
+
+.video_sec img {
+  width: 100%;
+  height: auto;
+  display: block; /* Ensure the image displays correctly */
+  border-radius: 2%;
+}
+
+.video-info {
+  padding: 10px; /* Add padding around the video info */
+}
+
+.video-info h2 {
+  font-size: 14px;
+  margin: 5px 0; /* Reduce top and bottom margin */
+  font-weight: bold;
+  color: #333;
+  line-height: 1.4;
+}
+
+.video-info h3 {
+  font-size: 13px;
+  margin: 5px 0; /* Reduce margin */
+  color: #606060;
+}
+
+.video-info p {
+  font-size: 12px;
+  margin: 5px 0 0; /* Adjust margins */
+  color: #606060;
+}
+
+/* Responsive Design */
+
+/* Tablet screens */
+@media (max-width: 768px) {
+  .feed {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(200px, 1fr)
+    ); /* Adjust grid for smaller screens */
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .video-info h2 {
+    font-size: 13px;
+  }
+
+  .video-info h3,
+  .video-info p {
+    font-size: 12px;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+  .feed {
+    grid-template-columns: repeat(
+      auto-fill,
+      minmax(150px, 1fr)
+    ); /* Adjust grid for mobile screens */
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .video-info h2 {
+    font-size: 12px;
+  }
+
+  .video-info h3 {
+    font-size: 11px;
+  }
+
+  .video-info p {
+    font-size: 10px;
+  }
+}
